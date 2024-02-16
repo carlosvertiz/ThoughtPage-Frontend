@@ -12,10 +12,13 @@ export function AddThoughtPage() {
   const {state, postThought, editThought, deleteThought, archiveThought} = useButtons({ reducer: thoughtReducer, initialState : {change: false}})
 
 
-  useEffect(() => {
+  useEffect( () => {
     getLastThoughts()
+      .then(response => response.json())
       .then(data =>{
-        setThoughtList(data.data)} )
+        console.log(data)
+        setThoughtList(data.data)} 
+        )
       .catch( error => {
         console.error('An error occurred:', error)
       })

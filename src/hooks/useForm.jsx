@@ -1,12 +1,13 @@
 import {useReducer, useEffect, useRef } from "react"
 
-export async function useForm ({reducer, initialState}){
+export  function useForm ({reducer, initialState}){
   const [state, dispatch] = useReducer(reducer, initialState);
   const firstInput = useRef(true)
   
   async function  submitForm({event, thoughtAction}){
     event.preventDefault()
     await thoughtAction({thought:state.thought, categories: state.categories})
+    console.log("despues de enviar")
     firstInput.current = true
     dispatch({type:"RESET_FORM"})
   }
