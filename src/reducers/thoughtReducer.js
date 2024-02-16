@@ -7,8 +7,8 @@ export async function thoughtReducer(state , action){
   switch (actionType) {
     case "POST_THOUGHT":
       await postThoughts({
-      body:actionPayload
-      })
+        body:actionPayload
+        })
     return {
       ...state,
       change : !state.change,

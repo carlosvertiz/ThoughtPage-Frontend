@@ -54,7 +54,7 @@ export async function postThoughts({body}) {
 }
 
 
-export function editThoughts({id, body}) {
+export async function editThoughts({id, body}) {
   const url = `${rootLink}/thoughts/${id}`;
   fetch(url, {
     method: 'PATCH',

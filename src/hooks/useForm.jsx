@@ -1,19 +1,19 @@
 import {useReducer, useEffect, useRef } from "react"
 
-export function useForm ({reducer, initialState}){
+export async function useForm ({reducer, initialState}){
   const [state, dispatch] = useReducer(reducer, initialState);
   const firstInput = useRef(true)
   
-  function submitForm({event, thoughtAction}){
+  async function  submitForm({event, thoughtAction}){
     event.preventDefault()
-    thoughtAction({thought:state.thought, categories: state.categories})
+    await thoughtAction({thought:state.thought, categories: state.categories})
     firstInput.current = true
     dispatch({type:"RESET_FORM"})
   }
 
-  function editForm({event, thoughtAction, id}){
+  async function editForm({event, thoughtAction, id}){
     event.preventDefault()
-    thoughtAction({id , thought:state.thought, categories: state.categories})
+    await thoughtAction({id , thought:state.thought, categories: state.categories})
     firstInput.current = true
   }
 
