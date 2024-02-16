@@ -10,7 +10,7 @@ export async function getLastThoughts() {
   }
 }
 
-export function getThoughts({categories="", views=1, quantity="", page=""}) {
+export async function getThoughts({categories="", views=1, quantity="", page=""}) {
   const url = `${rootLink}/thoughts?categories=${categories}&views=${views}&quantity=${quantity}&page=${page}`
   return fetch(url)
   .catch( error => {
@@ -19,7 +19,7 @@ export function getThoughts({categories="", views=1, quantity="", page=""}) {
 }
 
 
-export function deleteThoughts({id}) {
+export async function deleteThoughts({id}) {
   const url = `${rootLink}/thoughts/${id}`;
   fetch(url, {
     method: 'DELETE'
@@ -34,7 +34,7 @@ export function deleteThoughts({id}) {
   });
 }
 
-export function postThoughts({body}) {
+export async function postThoughts({body}) {
   const url = `${rootLink}/thoughts`;
   fetch(url, {
     method: 'POST',

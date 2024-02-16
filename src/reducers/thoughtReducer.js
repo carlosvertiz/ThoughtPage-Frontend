@@ -1,12 +1,12 @@
 import {deleteThoughts, editThoughts, postThoughts} from '../management/mySQL.js'
 
-export function thoughtReducer(state , action){
+export async function thoughtReducer(state , action){
   const {type : actionType, payload : actionPayload} = action
 
 
   switch (actionType) {
     case "POST_THOUGHT":
-      postThoughts({
+      await postThoughts({
       body:actionPayload
       })
     return {
@@ -14,7 +14,7 @@ export function thoughtReducer(state , action){
       change : !state.change,
     }
     case "MODIFY_THOUGHT":
-      editThoughts({
+      await editThoughts({
         id : actionPayload.id, 
         body:{
           thought : actionPayload.thought, 
@@ -27,7 +27,7 @@ export function thoughtReducer(state , action){
       }
       
     case "ARCHIVE_ELEMENT":
-      editThoughts({
+      await editThoughts({
         id:actionPayload.id,
         body:{
           views:actionPayload.views
@@ -39,7 +39,7 @@ export function thoughtReducer(state , action){
       }
 
     case "DELETE_ELEMENT":
-      deleteThoughts(actionPayload)
+      await deleteThoughts(actionPayload)
       return {
         ...state,
         change : !state.change,
