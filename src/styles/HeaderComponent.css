@@ -1,0 +1,169 @@
+.page-header {
+  background-color: rgb(19, 25, 33);
+  height: 80px;
+  width: 100vw;
+  position: fixed;
+  top:0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  z-index: 10;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.page-header-left-section {
+  grid-column: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap ;
+  justify-content: start;
+  align-items: center;
+}
+
+
+
+.linkedin-logo {
+  margin-left: 20px;  
+  padding: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.github-logo {
+  margin: 0;
+  padding: 0;
+  width: 70px;
+  height: 70px;
+}
+
+.page-header-right-section {
+  display: flex;
+  justify-content: end;
+  grid-column: 2;
+  align-items: center;
+  padding-right: 40px;
+  min-height: 50px;
+}
+
+
+nav,
+nav a {
+  font-family: 'Arial', sans-serif;
+}
+
+nav {
+  position: absolute;
+  margin: 0;
+  width: 210px;
+  height: 30px;
+  background: rgb(19, 25, 33);
+  font-size: 0;
+}
+
+nav a {
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  line-height: 30px;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  z-index: 2;
+}
+
+nav .animation{
+  position: absolute;
+  height: 5px;
+  top: 30px;
+  z-index: 1;
+  background-color: gray;
+  border-radius: 8px;
+  transition: all .5s ease 0s;
+}
+
+a:nth-child(1){
+  width: 105px;
+}
+
+nav .start-home, a:nth-child(1):hover~.animation{
+  width: 105px;
+  left: 0px;
+}
+
+nav a:nth-child(2):hover~.animation{
+  width: 105px;
+  left: 105px;
+}
+
+
+ a:nth-child(2){
+  width: 105px;
+}
+
+nav .start-search, a:nth-child(2):hover~.animation{
+  width: 105px;
+  left: 105px;
+}
+nav a:nth-child(1):hover~.animation{
+  width: 105px;
+  left: 0px;
+}
+
+
+
+@media (max-width : 1000px) {
+  .page-header {
+    height: 50px;
+  }
+  .linkedin-logo {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .github-logo {
+
+    width: 35px;
+    height: 35px;
+  }
+
+  nav {
+    width: 100px;
+    height: 20px;
+  }
+
+  nav a {
+    font-size: 10px;
+  }
+
+  
+a:nth-child(1){
+  width: 50px;
+}
+
+nav .start-home, a:nth-child(1):hover~.animation{
+  width: 50px;
+  left: 0px;
+}
+
+nav a:nth-child(2):hover~.animation{
+  width: 50px;
+  left: 50px;
+}
+
+
+ a:nth-child(2){
+  width: 50px;
+}
+
+nav .start-search, a:nth-child(2):hover~.animation{
+  width: 50px;
+  left: 50px;
+}
+nav a:nth-child(1):hover~.animation{
+  width: 50px;
+  left: 0px;
+}
+
+}

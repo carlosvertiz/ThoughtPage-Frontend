@@ -1,0 +1,115 @@
+.thoughtForm{
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-template-columns: 500px 120px;
+  grid-template-rows: 80px 30px 30px;
+  gap: 5px
+}
+
+  .send-button{
+    background-color: rgb(0, 180, 180);
+    border-radius: 15px;
+    box-sizing: border-box;
+    font-size: 15px;
+    text-align: center; 
+    font-weight: bold;
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+
+  .send-button-disabled {
+    border-color: rgb(153, 0, 0);
+    border-width: 3px; 
+    cursor: not-allowed;
+  }
+
+
+.thought-box{
+  border-radius: 15px;
+  padding-top: 5px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.category-box{
+  border-radius: 15px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.warning {
+  width: 300px;
+
+  grid-row: 3; 
+  background-color: #ffe066;
+  color: #cc3300; 
+  font-weight: bold; 
+  padding: 10px; 
+  border: 1px solid #cc3300;
+  border-radius: 15px; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+
+@media (max-width : 1000px) {
+  .thoughtForm{
+    display: grid;
+
+    grid-template-columns: 250px 80px;
+    grid-template-rows: 80px 30px 30px;
+    gap: 5px
+  }
+  
+    .send-button{
+      background-color: rgb(0, 180, 180);
+      border-radius: 15px;
+      box-sizing: border-box;
+      font-size: 15px;
+      text-align: center; 
+      font-weight: bold;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+  
+    .send-button-disabled {
+      border-color: rgb(153, 0, 0);
+      border-width: 3px; 
+      cursor: not-allowed;
+    }
+  
+  
+  .thought-box{
+    border-radius: 15px;
+    padding-top: 5px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    resize: none;
+  }
+  
+  .category-box{
+    border-radius: 15px;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+  
+  .warning {
+    width: 300px;
+  
+    grid-row: 3; 
+    background-color: #ffe066;
+    color: #cc3300; 
+    font-weight: bold; 
+    padding: 10px; 
+    border: 1px solid #cc3300;
+    border-radius: 15px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+  
+
+}

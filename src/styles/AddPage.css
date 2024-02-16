@@ -1,0 +1,13 @@
+h1{
+  font-size: 70px;
+  margin-top: 10px;
+  box-sizing: content-box;
+  color: #00f8e3;
+  text-align: center; /* Centra el texto dentro del botón */
+}
+
+@media (max-width : 1000px) {
+  h1{
+    font-size: 40px;
+  }
+}

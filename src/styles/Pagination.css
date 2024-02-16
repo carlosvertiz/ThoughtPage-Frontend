@@ -1,0 +1,11 @@
+.navigation-block{
+  display: flex; /* Activa el modelo de diseño flexbox */
+  justify-content: center; /* Centra horizontalmente los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+  gap: 50px;
+}
+
+h2{
+  font-size: 35px;
+  color: #00f8e3;
+}

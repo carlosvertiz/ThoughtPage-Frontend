@@ -1,0 +1,71 @@
+.edit-text{
+  height: 200px;
+  width: 250px;
+  resize: none;
+}
+
+.thought-text{
+  width: 250px;
+  text-align: left; 
+  color: #00f8e3;
+  overflow-x: auto;
+  overflow-y: auto;
+
+}
+
+.category-text{
+  text-align: center; 
+  align-content: center;
+  color: #00f8e3;
+  overflow-x: auto;
+  white-space: pre-line;
+
+}
+
+
+.date-text{
+  text-align: center; 
+  align-content: center;
+  color: #00f8e3;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.buttons-container{
+  max-height: 200px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.button-items{
+  background-color: rgb(0, 180, 180);
+  height: 30px;
+  width: 100px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none; 
+}
+
+@media (max-width : 1000px) {
+
+  .edit-text,
+  .thought-text,
+  .category-text,
+  .date-text{
+    font-size: 10px;
+  }
+  .button-items{
+    height: 15px;
+    width: 45px;
+    font-size: 10px;
+  }
+ .buttons-container{
+    max-height: 200px;
+    min-height: 55px;
+  
+  }
+}
