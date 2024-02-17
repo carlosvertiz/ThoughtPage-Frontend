@@ -19,16 +19,18 @@ export function SearchPage(){
 
 
   useEffect(() => {
-    getThoughts({categories: stateFilter.categories?? "", views: stateFilter.views, quantity, page})
-      .then((response) => {
-        return response.json()
+    setTimeout( () => {
+      getThoughts({categories: stateFilter.categories?? "", views: stateFilter.views, quantity, page})
+        .then((response) => {
+          return response.json()
+        })
+        .then(data => {
+          setPages(data.totalPages)
+          setfilteredData(data.data)})
+        .catch( error => {
+          console.error('An error occurred:', error)
       })
-      .then(data => {
-        setPages(data.totalPages)
-        setfilteredData(data.data)})
-      .catch( error => {
-        console.error('An error occurred:', error)
-    })
+    }, 1000)
   }, [state, stateFilter.categories, stateFilter.views, page])
 
   function nextPage(){

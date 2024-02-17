@@ -9,6 +9,7 @@ export async function thoughtReducer(state , action){
       await postThoughts({
         body:actionPayload
         })
+    
     return {
       ...state,
       change : !state.change,

@@ -13,15 +13,15 @@ export function AddThoughtPage() {
 
 
   useEffect( () => {
-    getLastThoughts()
-      .then(response => response.json())
-      .then(data =>{
-        console.log(data)
-        setThoughtList(data.data)} 
-        )
-      .catch( error => {
-        console.error('An error occurred:', error)
-      })
+    setTimeout( () => {
+      getLastThoughts()
+        .then(response => response.json())
+        .then(data =>{
+          setThoughtList(data.data)} 
+          )
+        .catch( error => {
+          console.error('An error occurred:', error)
+        }) }, 1000)
   }, [state])
 
 

@@ -4,17 +4,16 @@ export  function useForm ({reducer, initialState}){
   const [state, dispatch] = useReducer(reducer, initialState);
   const firstInput = useRef(true)
   
-  async function  submitForm({event, thoughtAction}){
+  function  submitForm({event, thoughtAction}){
     event.preventDefault()
-    await thoughtAction({thought:state.thought, categories: state.categories})
-    console.log("despues de enviar")
+    thoughtAction({thought:state.thought, categories: state.categories})
     firstInput.current = true
     dispatch({type:"RESET_FORM"})
   }
 
-  async function editForm({event, thoughtAction, id}){
+  function editForm({event, thoughtAction, id}){
     event.preventDefault()
-    await thoughtAction({id , thought:state.thought, categories: state.categories})
+    thoughtAction({id , thought:state.thought, categories: state.categories})
     firstInput.current = true
   }
 

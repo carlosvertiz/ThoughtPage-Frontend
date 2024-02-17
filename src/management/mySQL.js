@@ -2,7 +2,7 @@ const rootLink = "https://thoughtpage-backend-production.up.railway.app"
 
 export async function getLastThoughts() {
   const url = `${rootLink}/thoughts?num=5`
-  return fetch(url)
+  return fetch(url, { headers: {'Cache-Control':'no-store'}})
   .catch (error => {
     console.error('An error occurred:', error)
   })
@@ -33,7 +33,6 @@ export async function deleteThoughts({id}) {
 }
 
 export async function postThoughts({body}) {
-  console.log("enviando")
   const url = `${rootLink}/thoughts`;
   fetch(url, {
     method: 'POST',
